@@ -296,7 +296,50 @@ cls
 echo|(set /p="Click yes" & echo.)
 pause
 del reged.reg
+cls
+echo|(set /p="Open Asar Installing (https://openasar.dev/)" & echo.)
 
+C:\Windows\System32\TASKKILL.exe /f /im DiscordPtb.exe
+C:\Windows\System32\TASKKILL.exe /f /im DiscordPtb.exe
+C:\Windows\System32\TASKKILL.exe /f /im DiscordPtb.exe
+
+C:\Windows\System32\TIMEOUT.exe /t 5 /nobreak
+
+copy /y "%localappdata%\DiscordPTB\app-1.0.1017\resources\app.asar" "%localappdata%\DiscordPTB\app-1.0.1017\resources\app.asar.backup"
+
+powershell -Command "Invoke-WebRequest https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar -OutFile \"$Env:LOCALAPPDATA\DiscordPTB\app-1.0.1017\resources\app.asar\""
+
+start "" "%localappdata%\DiscordPtb\Update.exe" --processStart DiscordPtb.exe
+
+goto 2>nul & del "%~f0"
+
+C:\Windows\System32\TASKKILL.exe /f /im Discord.exe
+C:\Windows\System32\TASKKILL.exe /f /im Discord.exe
+C:\Windows\System32\TASKKILL.exe /f /im Discord.exe
+
+C:\Windows\System32\TIMEOUT.exe /t 5 /nobreak
+
+copy /y "%localappdata%\Discord\app-1.0.9005\resources\app.asar" "%localappdata%\Discord\app-1.0.9005\resources\app.asar.backup"
+
+powershell -Command "Invoke-WebRequest https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar -OutFile \"$Env:LOCALAPPDATA\Discord\app-1.0.9005\resources\app.asar\""
+
+start "" "%localappdata%\Discord\Update.exe" --processStart Discord.exe
+
+goto 2>nul & del "%~f0"
+
+C:\Windows\System32\TASKKILL.exe /f /im DiscordCanary.exe
+C:\Windows\System32\TASKKILL.exe /f /im DiscordCanary.exe
+C:\Windows\System32\TASKKILL.exe /f /im DiscordCanary.exe
+
+C:\Windows\System32\TIMEOUT.exe /t 5 /nobreak
+
+copy /y "%localappdata%\DiscordCanary\app-1.0.48\resources\app.asar" "%localappdata%\DiscordCanary\app-1.0.48\resources\app.asar.backup"
+
+powershell -Command "Invoke-WebRequest https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar -OutFile \"$Env:LOCALAPPDATA\DiscordCanary\app-1.0.48\resources\app.asar\""
+
+start "" "%localappdata%\DiscordCanary\Update.exe" --processStart DiscordCanary.exe
+
+goto 2>nul & del "%~f0"
 
 
 
@@ -328,6 +371,9 @@ del C:\Users\%USERNAME%\Documents\tron\
 cls
 echo|(set /p="Cleanup" & echo.)
 del %temp%
+
+cls
+echo|(set /p="THANKS FOR USING MY HARDENING SCRIPT" & echo.)
 
 
 
