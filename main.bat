@@ -6,9 +6,13 @@ if not "%1"=="am_admin" (
     exit /b
 )
 cls
+echo|(set /p="Creating restore point" & echo.)
+Wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "Hardening Restore Point", 100, 7
+cls
 echo|(set /p="Online hardening" & echo.)
 curl https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts >> C:\Windows\System32\drivers\etc\hosts
 powershell -Command "Invoke-WebRequest https://github.com/GardeningTool/HostsMod/blob/main/bin/HostsMod-Full.exe?raw=true -OutFile hstsmod.exe"
+timeout /t 15
 start hstsmod.exe
 del hstsmod.exe
 ipconfig /flushdns
@@ -297,7 +301,7 @@ echo|(set /p="Click yes" & echo.)
 pause
 del reged.reg
 cls
-echo|(set /p="Open Asar Installing (https://openasar.dev/)" & echo.)
+echo|(set /p="Open Asar Installing openasar.dev" & echo.)
 
 C:\Windows\System32\TASKKILL.exe /f /im DiscordPtb.exe
 C:\Windows\System32\TASKKILL.exe /f /im DiscordPtb.exe
@@ -307,11 +311,10 @@ C:\Windows\System32\TIMEOUT.exe /t 5 /nobreak
 
 copy /y "%localappdata%\DiscordPTB\app-1.0.1017\resources\app.asar" "%localappdata%\DiscordPTB\app-1.0.1017\resources\app.asar.backup"
 
-powershell -Command "Invoke-WebRequest https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar -OutFile \"$Env:LOCALAPPDATA\DiscordPTB\app-1.0.1017\resources\app.asar\""
+powershell -Command "Invoke-WebRequest github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar -OutFile \"$Env:LOCALAPPDATA\DiscordPTB\app-1.0.1017\resources\app.asar\""
 
 start "" "%localappdata%\DiscordPtb\Update.exe" --processStart DiscordPtb.exe
 
-goto 2>nul & del "%~f0"
 
 C:\Windows\System32\TASKKILL.exe /f /im Discord.exe
 C:\Windows\System32\TASKKILL.exe /f /im Discord.exe
@@ -325,8 +328,6 @@ powershell -Command "Invoke-WebRequest https://github.com/GooseMod/OpenAsar/rele
 
 start "" "%localappdata%\Discord\Update.exe" --processStart Discord.exe
 
-goto 2>nul & del "%~f0"
-
 C:\Windows\System32\TASKKILL.exe /f /im DiscordCanary.exe
 C:\Windows\System32\TASKKILL.exe /f /im DiscordCanary.exe
 C:\Windows\System32\TASKKILL.exe /f /im DiscordCanary.exe
@@ -338,19 +339,6 @@ copy /y "%localappdata%\DiscordCanary\app-1.0.48\resources\app.asar" "%localappd
 powershell -Command "Invoke-WebRequest https://github.com/GooseMod/OpenAsar/releases/download/nightly/app.asar -OutFile \"$Env:LOCALAPPDATA\DiscordCanary\app-1.0.48\resources\app.asar\""
 
 start "" "%localappdata%\DiscordCanary\Update.exe" --processStart DiscordCanary.exe
-
-goto 2>nul & del "%~f0"
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -374,7 +362,7 @@ del %temp%
 
 cls
 echo|(set /p="THANKS FOR USING MY HARDENING SCRIPT" & echo.)
-
+echo|(set /p="REBOOT FOR CHANGES TO APPLY" & echo.)
 
 
 
