@@ -9,3 +9,7 @@ Thanks to:
 <a href="https://github.com/GardeningTool/HostsMod"> GardeningTool </a> For more hosts
 <br/>
 <a href="https://github.com/GooseMod/OpenAsar"> GooseMod </a> For the discord mod
+<br/>
+Help discord
+<a href="https://discord.gg/YTSVvRvKc5"> Join here </a>
+
