@@ -7,3 +7,5 @@ Thanks to:
 <a href="https://github.com/NyanCatForEver/KantRatRemover"> NyanCatForEver </a> For kant removal tool
 <br/>
 <a href="https://github.com/GardeningTool/HostsMod"> GardeningTool </a> For more hosts
+<br/>
+<a href="https://github.com/GooseMod/OpenAsar"> GooseMod </a> For the discord mod
