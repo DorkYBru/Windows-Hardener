@@ -12,6 +12,8 @@ Thanks to:
 <br/>
 <a href="https://old.reddit.com/r/TronScript/"> r/TronScript </a> For the tron script!
 <br/>
+<a href="https://github.com/hellzerg/optimizer"> Hellzerg </a> For the optimizing scripts!
+<br/>
 +___________________+
 Help discord
 <a href="https://discord.gg/YTSVvRvKc5"> Join here </a>
